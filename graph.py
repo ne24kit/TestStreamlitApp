@@ -22,7 +22,7 @@ if uploaded_files is not None:
         if file.name not in uploaded_file_names:
             uploaded_file_names.append(file.name)
             with open(os.path.join("cache",file.name),"wb") as f: 
-                st.write(os.path.join("cache",file.name))
+                # st.write(os.path.join("cache",file.name))
                 f.write(file.getbuffer())         
                 # st.success("Saved File")
         # else:
@@ -81,6 +81,9 @@ for name in names[1:6]:  # Пример: берем только первые 5 
 # net.show_buttons(filter_=['physics']) 
 # net.toggle_drag_nodes(False)
 # net.set_edge_smooth('horizontal')
+
+
+st.balloons()
 
 if 'Physics on/off' not in st.session_state:
     st.session_state['Physics on/off'] = True
