@@ -83,7 +83,7 @@ for name in names[1:6]:  # Пример: берем только первые 5 
 # net.set_edge_smooth('horizontal')
 
 
-st.balloons()
+
 
 if 'Physics on/off' not in st.session_state:
     st.session_state['Physics on/off'] = True
@@ -109,3 +109,10 @@ st.title("Graph Visualization")
 
 # Генерация HTML для отображения графа
 components.html(net.generate_html(), height=800, width=800)
+
+if 'balloons' not in st.session_state:
+    st.session_state['balloons'] = False
+
+if st.button('BaLlOoNs', on_click=click_button, args=['balloons']):
+    st.balloons()
+
