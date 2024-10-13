@@ -22,6 +22,7 @@ if uploaded_files is not None:
         if file.name not in uploaded_file_names:
             uploaded_file_names.append(file.name)
             with open(os.path.join("cache",file.name),"wb") as f: 
+                st.write(os.path.join("cache",file.name))
                 f.write(file.getbuffer())         
                 # st.success("Saved File")
         # else:
